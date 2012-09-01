@@ -1,0 +1,96 @@
+ 
+**Specification 1: Display requirement**
+
+When you execute your code a shell prompt of the following form must appear:
+<username@system_name:curr_dir>
+E.g., <Peytr@ICS231:~>
+
+The directory from which the shell is invoked will be the home directory of the shell and should be indicated by "~"
+If the user executes "cd" change dir then the corresponding change must be reflected in the shell as well.
+E.g., ./a.out
+<Peytr@ICS231:~>cd newdir
+<Peytr@ICS231:~/newdir>
+
+
+
+**Specification 2: User-defined commands**
+
+The following commands must be supported by the shell
+
+-pid : prints the process id of your shell program
+E.g.,
+<Peytr@ICS231:~>pid
+command name: ./a.out process id: 234
+
+-pid current : prints the list of the process ids of the processes that are created by the shell and currently active
+E.g.,
+<Peytr@ICS231:~>pid current
+List of currently executing processes spawned from this shell:
+command name: emacs process id: 235
+command name: xbiff process id: 448
+command name: xcalc process id: 459
+
+-pid all : prints the list of process ids of all commands that were executed so far by the shell (including the currently executing processes)
+E.g.,
+<Peytr@ICS231:~>pid all
+List of all processes spawned from this shell:
+command name: emacs process id : 235
+command name: xbiff process id : 448
+command name: xcalc process id : 459
+
+-ls : prints all the files and directories in the current directory.
+E.g.,
+<Peytr@ICS231:~>ls
+directory1 directory2 a.txt b.txt c.txt
+
+
+
+**Specification 3: System commands with and without arguments**
+
+All other commands are treated as system commands like : emacs, vi and so on. The shell must be able to execute them either in the background or in the foreground.
+
+Foreground processes: For example, executing a "vi" command in the foreground implies that your shell will wait for this process to complete and regain control when this process exits.
+Background processes: Any command invoked with "&" is treated as background command. This implies that your shell will spawn that process and doesn't wait for the process to exit. It will keep taking user commands. If the background process exits then the shell must display the appropriate message to the user.
+
+E.g.
+<Peytr@ICS231:~>emacs &
+command emacs pid 456
+<Peytr@ICS231:~>
+
+
+Execute other commands
+
+After emacs exits, your shell program should check the exit status of emacs and display it on the screen.
+<Peytr@ICS231:~>
+emacs 456 exited normally
+<Peytr@ICS231:~>
+
+
+**Specification 4: History of commands**
+
+-hist : prints a list of all commands, in chronological order, executed by the shell so far E.g.
+<Peytr@ICS231:~>hist
+1. ls
+2. cd
+3. emacs
+4. xbiff
+5. xcalc
+6. vi
+7. ps
+
+-histn: prints a list of last "n" commands executed by the shell. If the number of commands is less than "n" then the shell should print only the available number of commands. The latest command executed should be displayed at the end, for e.g., "ps" was the latest command exe cuted by the user in the above history.
+E.g.
+<Peytr@ICS231:~>hist5 (Say print last 5 commands assuming the above history of commands)
+1. emacs
+2. xbiff
+3. xcalc
+4. vi
+5. ps
+
+-!histn : executes the history command number "n" (assuming the first command is numbered 1)
+E.g.
+<Peytr@ICS231:~>!hist4 (assuming above history of commands)
+vi
+
+-quit : exits the shell. Your shell should exit only if the user types this "quit" command. It should ignore any other signal from user like : CTRL-D, CTRL-C, SIGINT, SIGCHLD etc.
+
