@@ -1,3 +1,7 @@
+// Author : piyush bansal
+// Contact : piyush[dot]bansal[at]students[dot]iiit[dot]ac[dot]in
+// A very naive shell implementation 
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>

@@ -1,0 +1,8 @@
+Note that this is purely for educational purposes , this is a very bad implementation . :|
+The shell has some basic signal handling done in it.
+It can handle background and foreground processes .
+Only a very basic set of system calls has been employed into use .
+
+Feel free to copy , Fuck the stupid assigments, spend time on coding games .:P
+
+
