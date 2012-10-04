@@ -1,4 +1,4 @@
 cshell
 ======
 
-A simple shell implementation , without pipeline , handles background and foreground processes . This is just for educational purposes .
+A simple shell implementation , with pipelines and redirection  , handles background and foreground processes . This is just for educational purposes .
