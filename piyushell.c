@@ -3,7 +3,7 @@
 // Email : piyush[dot]bansal[at]students[dot]iiit[dot]ac[dot]in
 // An interactive bash shell with added functionality of pipelining and redirection 
 /*****************************************************************/
-//http//:piyush.bansal@github.com/myshell
+//http//:piyush.bansal@github.com/cshell
 
 /******************************************************************/
 // Note : While executing pipe or redirection commands , do not give spaces anywhere except the flags(ofcourse).
